@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <router-view class="router-view" v-slot="{ Component }">
       <transition :name="transitionName">
         <component :is="Component" />
@@ -43,7 +43,9 @@ export default {
 
 <style lang="scss">
 @import './styles/common';
-
+.container{
+  background-color: #fff
+}
 #app {
   position: relative;
   height: 100%;
