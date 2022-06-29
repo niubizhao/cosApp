@@ -1,6 +1,7 @@
 <template>
   <div class="goods">
-    <van-swipe class="goods-swipe" :autoplay="3000">
+    <topBar></topBar>
+    <!-- <van-swipe class="goods-swipe" :autoplay="3000">
       <van-swipe-item v-for="thumb in goods.thumb" :key="thumb">
         <img :src="thumb" />
       </van-swipe-item>
@@ -29,7 +30,7 @@
 
     <van-cell-group class="goods-cell-group">
       <van-cell title="查看商品详情" is-link @click="sorry" />
-    </van-cell-group>
+    </van-cell-group> -->
 
     <!-- <van-action-bar data-content-max style="margin: 0 auto">
       <van-action-bar-icon icon="chat-o" @click="sorry">
@@ -45,6 +46,13 @@
         立即购买
       </van-action-bar-button>
     </van-action-bar> -->
+    <van-grid clickable :column-num="2">
+      <van-grid-item icon="home-o" text="消息提醒" to="/" dot/>
+      <van-grid-item icon="search" text="待办任务" url="https://github.com"  dot/>
+      <van-grid-item icon="search" text="待开发模块" url="https://github.com" />
+      <van-grid-item icon="search" text="待开发模块" url="https://github.com" />
+
+    </van-grid>
     <nav-bar />
   </div>
 </template>
@@ -52,6 +60,7 @@
 <script>
 import { ref } from 'vue';
 import navBar from '@/components/NavBar.vue';
+import topBar from '@/components/TopBar.vue';
 
 import {
   Tag,
@@ -65,6 +74,7 @@ import {
   ActionBar,
   ActionBarIcon,
   ActionBarButton,
+  
 } from 'vant'
 
 export default {
@@ -84,7 +94,8 @@ export default {
     [ActionBar.name]: ActionBar,
     [ActionBarIcon.name]: ActionBarIcon,
     [ActionBarButton.name]: ActionBarButton,
-    navBar
+    navBar,
+    topBar
 
   },
 
