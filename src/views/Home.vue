@@ -47,10 +47,10 @@
       </van-action-bar-button>
     </van-action-bar> -->
     <van-grid clickable :column-num="2" :gutter="10" style="margin-top:10px">
-      <van-grid-item icon="home-o" text="消息提醒" to="/" dot/>
-      <van-grid-item icon="search" text="待办任务" url="https://github.com"  dot/>
-      <van-grid-item icon="search" text="待开发模块" url="https://github.com" />
-      <van-grid-item icon="search" text="待开发模块" url="https://github.com" />
+      <van-grid-item icon="home-o" text="消息提醒" to="/tasks" dot/>
+      <van-grid-item icon="search" text="待办任务" to="/tasks" dot/>
+      <van-grid-item icon="search" text="待开发模块"/>
+      <van-grid-item icon="search" text="待开发模块"/>
 
     </van-grid>
     <nav-bar />

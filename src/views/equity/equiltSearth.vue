@@ -1,28 +1,97 @@
 <template>
-  <div>
-    <p>2</p>
+  <div class="container">
+    <topBar></topBar>
+    <van-form @submit="onSubmit">
+      <van-cell-group inset>
+        <van-field
+          v-model="result"
+          is-link
+          readonly
+          name="picker"
+          label="证件类型"
+          placeholder="请选择证件类型"
+          @click="showPicker = true"
+        />
+        <van-popup v-model:show="showPicker" position="bottom">
+          <van-picker
+            :columns="columns"
+            @confirm="onConfirm"
+            @cancel="showPicker = false"
+          />
+        </van-popup>
+
+        <van-field
+          v-model="password"
+          type="password"
+          name="证件号码"
+          label="证件号码"
+          placeholder="请输入证件号码"
+        />
+        <van-field
+          v-model="password"
+          type="password"
+          name="保单号"
+          label="保单号"
+          placeholder="请输入保单号"
+        />
+        <van-field
+          v-model="password"
+          type="password"
+          name="MDM客户号"
+          label="MDM客户号"
+          placeholder="MDM客户号"
+        />
+      </van-cell-group>
+      <div style="margin: 16px">
+        <van-button round block type="primary" native-type="submit">
+          查询
+        </van-button>
+      </div>
+    </van-form>
+
     <nav-bar />
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import navBar from '@/components/NavBar.vue';
+import { ref } from 'vue'
+import navBar from '@/components/NavBar.vue'
+import topBar from '@/components/TopBar.vue';
 export default {
-   setup() {
-    return {};
-  },
-  data(){
-    return{
-      
+  setup() {
+    const result = ref('')
+    const showPicker = ref(false)
+    const columns = ['杭州', '宁波', '温州', '嘉兴', '湖州']
+
+    const onConfirm = (value) => {
+      result.value = value
+      showPicker.value = false
+    }
+    const username = ref('')
+    const password = ref('')
+    const onSubmit = (values) => {
+      console.log('submit', values)
+    }
+
+    return {
+      username,
+      password,
+      onSubmit,
+      result,
+      columns,
+      onConfirm,
+      showPicker
     }
   },
   components: {
-    navBar
+    navBar,
+    topBar
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.container{
+  background-color: #fff
+}
 </style>

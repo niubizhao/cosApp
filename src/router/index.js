@@ -44,6 +44,13 @@ const routes = [
     meta: { title: '申请单' }
 
   },
+  {
+    path: '/tasks',
+    name: 'tasks',
+    component: () => import(/* webpackChunkName: "home" */ '@/views/tasks/tasks.vue'),
+    meta: { title: '待办任务查询列表' }
+
+  },
 ]
 
 const router = createRouter({
