@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from '@/router'
 import './routeGuard'
 import store from '@/store'
-import { Tabbar, TabbarItem,Grid, GridItem,NavBar,Form, Field, CellGroup,Button,Picker,NumberKeyboard,Popup,List,Cell,PullRefresh,Sticky} from 'vant';
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import { Tabbar, TabbarItem,Grid, GridItem,NavBar,Form, Field, CellGroup,Button,Picker,NumberKeyboard,Popup,List,Cell,PullRefresh,Sticky,Badge } from 'vant';
 
 const app = createApp(App)
 
@@ -24,7 +26,8 @@ app.use(CellGroup);
 app.use(Cell);
 app.use(PullRefresh);
 app.use(Sticky);
+app.use(Badge);
 app.use(router)
 app.use(store)
-
+app.use(ElementPlus)
 app.mount('#app')

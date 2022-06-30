@@ -51,6 +51,13 @@ const routes = [
     meta: { title: '待办任务查询列表' }
 
   },
+  {
+    path: '/taskDetail',
+    name: 'taskDetail',
+    component: () => import(/* webpackChunkName: "home" */ '@/views/tasks/taskDeatil.vue'),
+    meta: { title: '待办任务查询列表' }
+
+  },
 ]
 
 const router = createRouter({

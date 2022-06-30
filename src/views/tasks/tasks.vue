@@ -14,10 +14,16 @@
           <van-cell
             v-for="item in list"
             :key="item"
-            :title="item"
             size="large"
+            to="taskDetail"
             is-link
-          />
+          >
+            <template #title>
+              <span class="custom-title">{{item}}</span>
+              <van-badge :content="20" />
+
+            </template>
+          </van-cell>
         </van-list>
       </van-pull-refresh>
     </div>
