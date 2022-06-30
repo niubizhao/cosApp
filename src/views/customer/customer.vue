@@ -30,16 +30,9 @@
         <van-field
           v-model="password"
           type="password"
-          name="保单号"
-          label="保单号"
-          placeholder="请输入保单号"
-        />
-        <van-field
-          v-model="password"
-          type="password"
-          name="MDM客户号"
-          label="MDM客户号"
-          placeholder="MDM客户号"
+          name="客户号"
+          label="客户号"
+          placeholder="请输入客户号"
         />
       </van-cell-group>
       <div style="margin: 16px">
@@ -61,7 +54,7 @@ export default {
   setup() {
     const result = ref('')
     const showPicker = ref(false)
-    const columns = ['杭州', '宁波', '温州', '嘉兴', '湖州']
+    const columns = ['身份证', '户口簿', '护照', '军官证', '港澳通行证','台湾居民来往大陆通行证','港澳台居民来往内陆通行证','其他']
 
     const onConfirm = (value) => {
       result.value = value

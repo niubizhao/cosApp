@@ -61,7 +61,7 @@ export default {
   setup() {
     const result = ref('')
     const showPicker = ref(false)
-    const columns = ['杭州', '宁波', '温州', '嘉兴', '湖州']
+    const columns = ['身份证', '户口簿', '护照', '军官证', '港澳通行证','台湾居民来往大陆通行证','港澳台居民来往内陆通行证','其他']
 
     const onConfirm = (value) => {
       result.value = value
