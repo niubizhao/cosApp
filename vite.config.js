@@ -4,6 +4,7 @@ import path from 'path'
 import styleImport, { VantResolve } from 'vite-plugin-style-import'
 
 export default defineConfig({
+  base:'/dist2',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

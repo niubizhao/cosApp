@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tabBar">
       <van-tabbar v-model="active" route fixed>
       <van-tabbar-item replace to="/home"  icon="home-o">首页</van-tabbar-item>
       <van-tabbar-item replace to="/equiltSearth"  icon="search">权益查询</van-tabbar-item>
@@ -20,5 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.tabBar{
+  z-index: 999;
+}
 </style>

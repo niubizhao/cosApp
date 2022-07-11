@@ -26,35 +26,35 @@ const routes = [
   {
     path: '/customer',
     name: 'customer',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/customer/customer.vue'),
+    component: () => import(/* webpackChunkName: "customer" */ '@/views/customer/customer.vue'),
     meta: { title: '客户等级' }
 
   },
   {
     path: '/equiltSearth',
     name: 'equiltSearth',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/equity/equiltSearth.vue'),
+    component: () => import(/* webpackChunkName: "equiltSearth" */ '@/views/equity/equiltSearth.vue'),
     meta: { title: '权益查询' }
 
   },
   {
     path: '/applicationForm',
     name: 'applicationForm',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/service/applicationForm.vue'),
+    component: () => import(/* webpackChunkName: "applicationForm" */ '@/views/service/applicationForm.vue'),
     meta: { title: '申请单' }
 
   },
   {
     path: '/tasks',
     name: 'tasks',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/tasks/tasks.vue'),
+    component: () => import(/* webpackChunkName: "tasks" */ '@/views/tasks/tasks.vue'),
     meta: { title: '待办任务查询列表' }
 
   },
   {
     path: '/taskDetail',
     name: 'taskDetail',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/tasks/taskDeatil.vue'),
+    component: () => import(/* webpackChunkName: "taskDeatil" */ '@/views/tasks/taskDeatil.vue'),
     meta: { title: '待办任务查询列表' }
 
   },
@@ -62,7 +62,7 @@ const routes = [
 
 const router = createRouter({
   // vueRouter@3版本的mode改成了history，hash模式配置createWebHashHistory，history模式配置createWebHistory
-  history: createWebHashHistory(),
+  history: createWebHashHistory('dist2'),
   routes
 })
 
